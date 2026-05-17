@@ -27,7 +27,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/radarr:/config
-      - /data:/data
+      - /mnt/data:/mnt/data
 
 ###############################################
 # SONARR - TV Shows
@@ -42,7 +42,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/sonarr:/config
-      - /data:/data
+      - /mnt/data:/mnt/data
 
 ###############################################
 # LIDARR - Music
@@ -57,7 +57,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/lidarr:/config
-      - /data:/data
+      - /mnt/data:/mnt/data
 
 ###############################################
 # BAZARR - Subtitles
@@ -72,7 +72,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/bazarr:/config
-      - /data/media:/data/media
+      - /mnt/data/media:/mnt/data/media
 
 ###############################################
 # PROWLARR - Indexer Manager
@@ -104,7 +104,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/sabnzbd:/config
-      - /data/usenet:/data/usenet:rw
+      - /mnt/data/usenet:/mnt/data/usenet:rw
 
 ###############################################
 # JELLYFIN - Media Server
@@ -117,13 +117,13 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/jellyfin:/config
-      - /data/media:/data/media:ro #read-only
+      - /mnt/data/media:/mnt/data/media:ro #read-only
     ports:
       - 8096:8096
 
 
 ###############################################
-SEERR - Request Management (Jellyseerr)
+#SEERR - Request Management (Jellyseerr)
 ###############################################
 
   seerr:
